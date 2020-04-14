@@ -1,5 +1,5 @@
 # nntmux-buckets
-![PHP Composer](https://github.com/NZBCat/nntmux-buckets/workflows/PHP%20Composer/badge.svg)
+![PHPUnit](https://github.com/NZBCat/nntmux-buckets/workflows/PHPUnit/badge.svg)
 
 This package will add a `HasBuckets` trait you can attach to your user model and gain access to the ability to assign flexible 
 buckets to your users. For example, say you have:
