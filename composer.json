@@ -1,0 +1,41 @@
+{
+  "name": "nzbcat/nntmux-buckets",
+  "description": "A Laravel package for NNTmux to enable user buckets for elevated privileges.",
+  "minimum-stability": "stable",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "king-cat",
+      "email": "kingcat@nzb.cat"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "NZBCat\\UserBuckets\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "NZBCat\\UserBuckets\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-f": "vendor/bin/phpunit --filter"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0",
+    "phpunit/phpunit": "^9.1"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "NZBCat\\UserBuckets\\UserBucketsServiceProvider"
+      ]
+    }
+  },
+  "require": {
+    "spatie/laravel-permission": "^3.11"
+  }
+}
