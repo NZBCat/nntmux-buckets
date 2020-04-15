@@ -21,6 +21,11 @@ class InstallUserBucketsPackage extends Command
          '--tag' => "config"
       ]);
 
+      $this->call('vendor:publish', [
+         '--provider' => "NZBCat\UserBuckets\UserBucketsServiceProvider",
+         '--tag' => "seeds"
+      ]);
+
       $this->info('Installed UserBuckets');
    }
 }

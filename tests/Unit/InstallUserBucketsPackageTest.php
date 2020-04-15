@@ -17,9 +17,12 @@ class InstallUserBucketsPackageTest extends TestCase
       }
 
       $this->assertFalse(File::exists(config_path('userbuckets.php')));
+      $this->assertFalse(File::exists(database_path('seeds/BucketTypeSeeder.php')));
 
       Artisan::call('userbuckets:install');
 
       $this->assertTrue(File::exists(config_path('userbuckets.php')));
+      $this->assertTrue(File::exists(database_path('seeds/BucketTypeSeeder.php')));
+
    }
 }
