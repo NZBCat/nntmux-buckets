@@ -4,14 +4,14 @@ namespace NZBCat\UserBuckets;
 
 use Illuminate\Support\ServiceProvider;
 use NZBCat\UserBuckets\Console\InstallUserBucketsPackage;
-use NZBCat\UserBuckets\Models\Bucket;
-use NZBCat\UserBuckets\Observers\BucketObserver;
+use NZBCat\UserBuckets\Providers\EventServiceProvider;
 
 class UserBucketsServiceProvider extends ServiceProvider
 {
    public function register()
    {
       $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'userbuckets');
+      $this->app->register(EventServiceProvider::class);
    }
 
    public function boot()
@@ -38,7 +38,5 @@ class UserBucketsServiceProvider extends ServiceProvider
             InstallUserBucketsPackage::class,
          ]);
       }
-
-      Bucket::observe(BucketObserver::class);
    }
 }

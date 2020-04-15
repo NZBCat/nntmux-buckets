@@ -15,6 +15,9 @@ class InstallUserBucketsPackageTest extends TestCase
       if (File::exists(config_path('userbuckets.php'))) {
          unlink(config_path('userbuckets.php'));
       }
+      if (File::exists(database_path('seeds/BucketTypeSeeder.php'))) {
+         unlink(database_path('seeds/BucketTypeSeeder.php'));
+      }
 
       $this->assertFalse(File::exists(config_path('userbuckets.php')));
       $this->assertFalse(File::exists(database_path('seeds/BucketTypeSeeder.php')));
